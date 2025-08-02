@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Spoon | Restaurant</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍴</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        /* ENHANCED: Hero background image with better overlay */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-item:hover .menu-item-image {
+            transform: scale(1.05);
+        }
+        /* NEW: Styles for fade-in animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="logo.jpg" alt="The Golden Spoon Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold font-playfair text-amber-600">The Golden Spoon</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#menu" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Menu</a>
+                <a href="#about" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Contact</a>
+            </div>
+            <a href="booking.html" class="hidden md:block bg-amber-600 text-white px-5 py-2.5 rounded-full hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Book a Table</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#menu" class="block py-2 text-gray-600 hover:text-amber-600">Menu</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-amber-600">About Us</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-amber-600">Contact</a>
+            <a href="booking.html" class="block mt-2 bg-amber-600 text-white text-center px-4 py-2 rounded-full hover:bg-amber-700">Book a Table</a>
+        </div>
+    </header>
+
+    <section class="hero-bg h-[70vh] md:h-[90vh] flex items-center justify-center text-white text-center">
+        <div class="bg-black/40 p-8 rounded-xl max-w-3xl mx-auto reveal visible">
+            <h1 class="text-4xl md:text-7xl font-playfair font-extrabold mb-4 leading-tight">Experience Culinary Excellence</h1>
+            <p class="text-lg md:text-xl text-slate-200 mb-8">Where every flavor tells a story. Join us for an unforgettable dining experience.</p>
+            <a href="#menu" class="bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-amber-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-16 md:py-24">
+        <section id="menu" class="mb-16 md:mb-24 reveal">
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold text-center mb-12">Our Signature Dishes</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="pasta-primavera.jpg" alt="Pasta Primavera" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Pasta Primavera</h3>
+                        <p class="text-gray-600 mb-4">Fresh seasonal vegetables and artisan pasta in a light, zesty cream sauce.</p>
+                        <span class="text-xl font-bold text-amber-700">₹399</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="salmon.jpg" alt="Grilled Salmon" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Grilled Salmon</h3>
+                        <p class="text-gray-600 mb-4">Perfectly grilled salmon served with crisp asparagus and a lemon-dill sauce.</p>
+                        <span class="text-xl font-bold text-amber-700">₹499</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="lava-cake.jpg" alt="Chocolate Lava Cake" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Chocolate Lava Cake</h3>
+                        <p class="text-gray-600 mb-4">Warm, rich Belgian chocolate cake with a molten center, served with ice cream.</p>
+                        <span class="text-xl font-bold text-amber-700">₹199</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="pizza.jpg" alt="Margherita Pizza" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Margherita Pizza</h3>
+                        <p class="text-gray-600 mb-4">Classic Italian pizza with fresh tomatoes, mozzarella, and aromatic basil.</p>
+                        <span class="text-xl font-bold text-amber-700">₹599</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="lasagna.jpg" alt="Classic Lasagna" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Classic Lasagna</h3>
+                        <p class="text-gray-600 mb-4">Stacked layers of fresh pasta, rich bolognese sauce, and creamy béchamel.</p>
+                        <span class="text-xl font-bold text-amber-700">₹299</span>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="risotto.jpg" alt="Risotto" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Risotto</h3>
+                        <p class="text-gray-600 mb-4">Creamy Arborio rice cooked with Parmesan cheese.</p>
+                        <span class="text-xl font-bold text-amber-700">₹249</span>
+                    </div>
+                </div>
+ <div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="mojito.jpg" alt="Refreshing Mojito" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Refreshing Mojito</h3>
+                        <p class="text-gray-600 mb-4">A classic Cuban highball cocktail known for its refreshing combination of flavors.</p>
+                        <span class="text-xl font-bold text-amber-700">₹149</span>
+                    </div>
+                </div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="dumplings.jpg" alt="Dumplings" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Dumplings</h3>
+                        <p class="text-gray-600 mb-4">Pieces of dough, often wrapped around a filling made of vegetables like cabbage,etc.</p>
+                        <span class="text-xl font-bold text-amber-700">₹199</span>
+                    </div>
+                </div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="burger.jpg" alt="Cheese Burger" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Cheese Burger</h3>
+                        <p class="text-gray-600 mb-4">A hamburger with a slice of cheese melted on top of the patty.</p>
+                        <span class="text-xl font-bold text-amber-700">₹99</span>
+                    </div>
+                </div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="pastry.jpg" alt="Chocolate Truffle Pastry" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Chocolate Truffle Pastry</h3>
+                        <p class="text-gray-600 mb-4">Layers of moist chocolate sponge cake and a rich chocolate truffle filling.</p>
+                        <span class="text-xl font-bold text-amber-700">₹119</span>
+                    </div>
+                </div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="spaghetti.jpg" alt="Spaghetti" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Spaghetti</h3>
+                        <p class="text-gray-600 mb-4">It's typically made from durum wheat semolina, noodle-like strands.</p>
+                        <span class="text-xl font-bold text-amber-700">₹179</span>
+                    </div>
+                </div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden group menu-item transition-shadow duration-300 hover:shadow-2xl">
+                    <div class="overflow-hidden"><img src="coffee.jpg" alt="Cold Coffee" class="w-full h-64 object-cover menu-item-image transition-transform duration-300"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Cold Coffee</h3>
+                        <p class="text-gray-600 mb-4">A refreshing, chilled beverage made with coffee, milk, and ice.</p>
+                        <span class="text-xl font-bold text-amber-700">₹149</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="mb-16 md:mb-24 bg-amber-50/50 rounded-xl p-8 md:p-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold text-center mb-12">What Our Guests Say</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 italic mb-4">"An absolute delight! The ambiance in Rampur is cozy and the food is out of this world. The Pasta Primavera was the best I've ever had. Highly recommended!"</p>
+                    <p class="font-bold text-amber-700">- Anjali Sharma</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 italic mb-4">"The Golden Spoon is our go-to for special occasions. Impeccable service and a menu that never disappoints. A true gem in the city."</p>
+                    <p class="font-bold text-amber-700">- Rohan Gupta</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-white rounded-lg shadow-xl p-8 md:p-12 mb-16 flex flex-col md:flex-row items-center gap-8 md:gap-12 reveal">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">Our Story</h2>
+                <p class="mb-4 text-gray-600 leading-relaxed">Founded in 2005, The Golden Spoon was born from a passion for authentic flavors and heartfelt hospitality. Our philosophy is simple: use the freshest, locally-sourced ingredients, honor traditional recipes with a modern twist, and create a warm, inviting atmosphere for every guest.</p>
+                <p class="text-gray-600 leading-relaxed">Our celebrated chef, Massimo Bottura, travels the world to bring back new inspirations, ensuring our menu is always exciting, innovative, and tells a story with every bite.</p>
+            </div>
+            <div class="md:w-1/2">
+                <img src="restaurant.jpg" alt="Restaurant Interior" class="rounded-lg shadow-md aspect-video object-cover">
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-playfair font-bold mb-4">The Golden Spoon</h3>
+            <p class="mb-2 text-slate-300">Civil Lines, Rampur, Uttar Pradesh, 244901</p>
+            <p class="mb-2"><a href="mailto:contact@thegoldenspoon.com" class="text-amber-400 hover:underline">contact@thegoldenspoon.com</a></p>
+            <p class="mb-6 text-slate-300">Phone: (123) 456-7890</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-slate-300 hover:text-amber-400 transition-colors duration-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg></a>
+                <a href="#" class="text-slate-300 hover:text-amber-400 transition-colors duration-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.664-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg></a>
+                <a href="#" class="text-slate-300 hover:text-amber-400 transition-colors duration-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.209 3.803 4.649-.625.17-1.288.22-1.97.078.618 1.94 2.423 3.28 4.552 3.32-.975.81-2.229 1.28-3.584 1.28-.234 0-.465-.013-.694-.04 1.258.857 2.788 1.34 4.464 1.34 5.378 0 8.318-4.438 8.318-8.318 0-.127-.003-.255-.008-.382.57-.413 1.063-.94 1.45-1.513z"></path></svg></a>
+            </div>
+            <p class="mt-8 text-sm text-slate-400">&copy; 2025 The Golden Spoon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+   
+    <script>
+window.watsonAssistantChatOptions = {
+    integrationID: "d20b473b-a59c-4cc5-9f55-f502cb0b5279", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "09581c51-5fa8-4507-9a67-ed622761b734", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // NEW: On-Scroll Reveal Animation Script
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        document.addEventListener('DOMContentLoaded', revealOnScroll); // Initial check
+    </script>
+</body>
+</html>
